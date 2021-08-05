@@ -24,7 +24,15 @@
 }
 
 address{
-    font-size:80%;
+    font-size:100%;
     margin:0px;
-    color:#0f0f0f;
+    color:#e8ecec;
+}
+
+body{
+    padding:50px 0px 0px 0px;
+    z-index:0;
+}
+.navbar-dark {
+    background-color: #512DA8;
 }
