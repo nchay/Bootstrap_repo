@@ -110,7 +110,7 @@
                         <div class = "form-group row">
                             <label for="smoke" class="col-sm-2 col-form-label">Section</label>
                             <div class="col-sm-4">
-                                <div class="btn-group-toggle" data-toggle="buttons">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-secondary btn-success btn-sm active">
                                         <input type="radio" name="options" id="option1" autocomplete="off" checked> Non-Smoking
                                     </label>
@@ -157,9 +157,9 @@
             </div>
         </div>
     </header>
-
+    
     <div class="row row-content">
-        <div class="col">
+        <div class="col-12">
             <div class="carousel slide" id="mycarousel" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
@@ -200,6 +200,14 @@
             <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                 <span class="carousel-control-next-icon"></span>
             </a>
+            <div class="btn-group" id="carouselButton">
+                <button class="btn btn-danger bn-sm" id="carousel-pause">
+                    <span class="fa fa-pause"></span>
+                </button>
+                <button class="btn btn-danger bn-sm" id="carousel-play">
+                    <span class="fa fa-play"></span>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -300,6 +308,17 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#mycarousel").carousel({interval : 2500});
+            $("#carousel-pause").click(function(){
+                $("#mycarousel").carousel('pause');
+            });
+            $("#carousel-play").click(function(){
+                $("#mycarousel").carousel('cycle');
+            });
+        })
+    </script>
 </body>
 
 </html>
