@@ -32,8 +32,7 @@
                 </div>
         </div>
         <span class="navbar-text">
-            <a data-toggle="modal" data-target="#loginModal">
-            <span class="fa fa-sign-in"></span> Login</a>
+           <a id="loginModalLink"> <span class="fa fa-sign-in"></span> Login</a>
         </span>
     </nav>
     <div id="loginModal" class="modal fade" role="dialog">
@@ -123,10 +122,10 @@
                         <div class = "form-group row">
                             <label for="DateTime" class="col-sm-2 col-form-label">Date and Time</label>
                             <div class="col-sm-3">
-                            <input type="text" class="form-control" id="date" name="date" placeholder="Date">
+                            <input type="date" class="form-control" id="date" name="date" placeholder="Date">
                             </div>
                             <div class="col-sm-3">
-                            <input type="text" class="form-control" id="time" name="time" placeholder="Time">
+                            <input type="time" class="form-control" id="time" name="time" placeholder="Time">
                             </div>
                         </div>
                         <div class = "form-group row">
@@ -151,8 +150,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a type="button" class="btn btn-warning btn-block btn-sm"
-                    data-toggle="modal" data-target="#reserveModal" href="#reserveModal">Reserve Table</a>
+                    <a id="reserveBtn" type="button" class="btn btn-warning btn-block btn-sm" href="#reserveModal">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -305,7 +303,6 @@
     <script>
         $(document).ready(function(){
             $("#mycarousel").carousel({interval : 2500});
-
             $("#carouselButton").click(function(){
                 if($('#carouselButton').children('span').hasClass('fa-pause')){
                     $("#mycarousel").carousel('pause');
@@ -317,6 +314,12 @@
                     $('#carouselButton').children('span').removeClass('fa-play');
                     $('#carouselButton').children('span').addClass('fa-pause');
                 }
+            });
+            $("#reserveBtn").click(function(){
+                $("#reserveModal").modal('show');
+            });
+            $("#loginModalLink").click(function(){
+                $("#loginModal").modal('show');
             });
         })
     </script>
